@@ -20,7 +20,7 @@ const copy = async () => {
         if (err)
             throw new Error('FS operation failed');
         else {
-            files.forEach(file => {
+            files.forEach((file) => {
                 const filePath = `${dirPath}/${file}`;
                 const newFilePath = `${newDirPath}/${file}`;
                 fs.readFile(filePath, 'utf8', (err, data) => {
