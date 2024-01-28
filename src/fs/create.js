@@ -14,7 +14,7 @@ const create = async () => {
         } else {
             throw new Error('FS operation failed');
         }
-    }, );
+    });
 };
 
 await create();
