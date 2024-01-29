@@ -1,9 +1,9 @@
-import process, { exit, stdout } from 'node:process';
+import process, { stdout } from 'node:process';
 import { Transform } from 'node:stream';
 
 const transform = async () => {
     const reverse = new Transform({
-        transform(chunk, encoding, callback) {
+        transform(chunk, _encoding, callback) {
             callback(null, chunk.toString().split("").reverse().join("") + '\n\n');
         },
     });
