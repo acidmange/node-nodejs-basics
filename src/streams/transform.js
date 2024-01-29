@@ -1,4 +1,4 @@
-import process, { stdout } from 'node:process';
+import process from 'node:process';
 import { Transform } from 'node:stream';
 
 const transform = async () => {
@@ -8,10 +8,7 @@ const transform = async () => {
         },
     });
 
-    process.stdin.on("data", data => {
-        data = data.toString();
-    })
-        .pipe(reverse).pipe(stdout);
+    process.stdin.pipe(reverse).pipe(process.stdout);
 };
 
 await transform();
